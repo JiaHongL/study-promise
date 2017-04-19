@@ -56,7 +56,7 @@
             成功時做...
             return timeout(1000);  //傳一個Promse給下一個then
         },(error)=>{         
-            失敗時做...             //如果有寫的話 , 會由這邊接收error,cath則不會接收到error.
+            失敗時做...             //如果有寫的話 , 會由這邊接收error , cath則不會接收到error.
         }).then((v)=>{
             成功時做...             //第2個Promise , 這邊沒寫onrejected() , 錯誤會由catch捕獲.
         }).catch((error)=>{
