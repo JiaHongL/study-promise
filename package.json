@@ -1,0 +1,29 @@
+{
+  "name": "study-promise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.23.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-2": "^6.22.0"
+  },
+  "quokka": {
+    "babel": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiaHongL/study-promise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiaHongL/study-promise/issues"
+  },
+  "homepage": "https://github.com/JiaHongL/study-promise#readme"
+}
