@@ -81,7 +81,7 @@
     }
 
     getData();
- > async / await 只是語法糖 , 也是基於Promise上運作的.
+ > async / await 只是語法糖 , 也是基於Promise上運作.
 
 <br />
 
