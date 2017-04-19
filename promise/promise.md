@@ -30,7 +30,7 @@
         then(onfulfilled?:() , onrejected?:()): Promise<T>;
         catch(onrejected:()): Promise<T | TResult>;  
     }   
-> 可以看得出來每個Promise都有then( )和catch( ) , 而本身又可以再return一個Promise , 所以又可以再接then , 藉由這樣把嵌套的程式碼做展平 ,變得更易閱讀.  
+> 可以看得出來每個Promise都有then( )和catch( ) , 而本身又是一個Promise , 所以又可以再接then( ) , 藉由這樣的方式 , 把嵌套的程式碼做展平 ,變得更易閱讀.  
 
 <br />
 
