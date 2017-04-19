@@ -12,7 +12,7 @@
 > ES6已經把Promise納入規範 , 並提供了 Promise Object 來解決異步的問題.
 
 #### Promise 三種狀態  
-- Pending : 進行中 , 等待結果.   
+- Pending :  剛建立 , 正進行中 , 等待結果.   
 - Fulfilled : 已成功. 
 - Rejected :  已失敗.  
 
