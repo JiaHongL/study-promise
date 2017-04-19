@@ -64,7 +64,7 @@
         })
 
 
-#### iii.使用ES7的 async / await , 使用 await 代替 then , 讓程式碼更加語意化.
+#### iii.使用ES7的 async / await , 讓 await 代替 then , 讓程式碼更加語意化.
 
     const = getData = async()=>{    //定義時加上async , 說明是異步函式.
         try {
