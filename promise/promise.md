@@ -58,10 +58,11 @@
         },(error)=>{         
             失敗時做...             //如果有寫的話 , 會由這邊接收error , cath則不會接收到error.
         }).then((v)=>{
-            成功時做...             //第2個Promise.then , 這邊沒寫onrejected() , 有錯誤的話 , 會由catch捕獲.
+            成功時做...             //第2個Promise.then , 這邊沒寫onrejected() , 有錯誤的話 , 會由catch捕獲.
         }).catch((error)=>{
             失敗時做...             //接收鏈結上的錯誤.
         })
+
 
 #### iii.使用ES7的 async / await , 使用 await 代替 then , 讓程式碼更加語意化.
 
