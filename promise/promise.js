@@ -113,7 +113,7 @@ const getData4 = () => {
             console.log('(1) v:' + v);
             // return timeout(3000);    //1.不發出第二個promise
         })
-        .then((v) => { //2.沒接收到Promiseㄉ的then(),會立即執行onFulfilled().
+        .then((v) => { //2.沒接收到Promise的then(),會立即執行onFulfilled().
                 console.log('(2) 立即執行onFulfilled()');
                 console.log('(2):', new Date());
                 console.log('(2) v:' + v);
