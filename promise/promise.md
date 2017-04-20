@@ -32,6 +32,8 @@
     }   
 > 可以看得出來每個Promise都有then( )和catch( ) , 而本身又是一個Promise , 所以又可以再接then( ) , 藉由這樣的方式 , 把嵌套的程式碼做展平 ,變得更易閱讀.  
 
+> 如果then( )和catch( )沒有return , 就會默認發送一個狀態為 Fulfilled 的 Promise . 所以才可以像這樣 then().then().then()... 一直連結下去.
+
 <br />
 
 ## 三、範例解說
