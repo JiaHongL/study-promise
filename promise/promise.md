@@ -17,7 +17,7 @@
 - Rejected :  已失敗.  
 
 #### Promise 改變狀態的方法  
-- resolve( ): 把Promise狀態改為Fulfilled .    
+- resolve( ) : 把Promise狀態改為Fulfilled .    
 - reject( ) : 把Promise狀態改為Rejected .
 
 #### Promise 狀態改變後執行的函式
