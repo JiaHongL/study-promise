@@ -24,7 +24,7 @@
 - onFulfilled( ): 當狀態為Fulfilled時 , 執行函式內的程式碼 .    
 - onRejected( ) : 當狀態為Rejected時 , 執行函式內的程式碼 . 
 
-#### 這是 Typesctip 對 Promise 的型別定義 , '?' 表示可有可無的意思. ( 有簡化過 , 留重要的部份 )
+#### 這是 Typescript 對 Promise 的型別定義 , '?' 表示可有可無的意思. ( 有簡化過 , 留重要的部份 )
 
     interface Promise<T> {  
         then(onfulfilled?:() , onrejected?:()): Promise<T>;
