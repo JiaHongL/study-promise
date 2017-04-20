@@ -24,7 +24,7 @@
 - onFulfilled( ): 當狀態為Fulfilled時 , 執行函式內的程式碼 .    
 - onRejected( ) : 當狀態為Rejected時 , 執行函式內的程式碼 . 
 
-#### 這是 Typesctip 對 Promise 的型別定義 , '?' 是表示可有可無的意思. ( 有簡化過 , 留重要的部份 )
+#### 這是 Typesctip 對 Promise 的型別定義 , '?' 表示可有可無的意思. ( 有簡化過 , 留重要的部份 )
 
     interface Promise<T> {  
         then(onfulfilled?:() , onrejected?:()): Promise<T>;
@@ -69,7 +69,7 @@
     const = getData = async()=>{    //定義時加上async , 說明是異步函式.
         try {
             await timeout(3000);    //加上await , 等待完成後才會做下一步 , 就像是同步.
-        } catch (error) {
+        } catch (error) {           //error handler, 改換用try/catch來捕捉.
             console.log(error);
         }
 
