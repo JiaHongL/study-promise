@@ -71,10 +71,8 @@
             
         console.log('End');
         
-     }
-     
-     getData();  // 執行順序： Start => End => (1) => (2) 
-     
+     }  
+     getData();  // 執行順序： Start => End => (1) => (2)   
      Ps: Promise 只是讓異步的任務依序執行 , 而其它同步的任務還是會先執行.
    
 
@@ -100,9 +98,8 @@
         
         console.log('End');
         
-    }
-    
-    getData(); // 執行順序： Start => (1) => (2) => End
+    }  
+    getData(); // 執行順序： Start => (1) => (2) => End  
     Ps: await 和 then 還是有差別的 , 使用await會等異步任務執行完後 , 再執行其它任務 , 全部的任務都變成像同步任務一樣.
     
  > async / await 只是語法糖 , 也是基於Promise上運作.
