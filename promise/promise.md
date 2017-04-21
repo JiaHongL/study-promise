@@ -67,7 +67,7 @@
 
 #### iii.使用ES7的 async / await , 讓 await 代替 then , 讓程式碼更加語意化.
 
-    const = getData = async()=>{    //定義時加上async , 說明是異步函式.
+    const getData = async()=>{    //定義時加上async , 說明是異步函式.
         try {
             await timeout(3000);    //加上await , 等待完成後才會做下一步 , 就像是同步.
         } catch (error) {           //error handler, 改換用try/catch來捕捉.
