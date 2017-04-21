@@ -30,11 +30,6 @@
 - onFulfilled( ): 當狀態為Fulfilled時 , 執行函式內的程式碼 .    
 - onRejected( ) : 當狀態為Rejected時 , 執行函式內的程式碼 . 
 
-#### 一次發出多個Promise , 最後回傳一個新的Promise(Fulfilled或Rejected) 
-- Promise.all( ) : 當全部為Fulfilled時 , 回傳一個Fulfilled的Promise , 但只要有Rejected , 則回傳一個Rejected的Promise.
-- Promise.race( ) : 只要有一個Promise改變狀態(Fulfilled/Rejected) , 就會馬上回傳一個Promise(Fulfilled/Rejected). 
-
-
 #### 這是 Typescript 對 Promise 的型別定義 , '?' 表示可有可無的意思. ( 有簡化過 , 留重要的部份 )
 
     interface Promise<T> {  
@@ -43,6 +38,9 @@
     }   
 > 可以看得出來每個Promise都有then( )和catch( ) , 本身如果有 return 的話 , 又會是一個新 Promise , 而沒有 return 的話, 則會默認發送一個狀態為 Fulfilled 的 Promise , 所以又可以再接then( ) , 藉由這樣的方式 , 把嵌套的程式碼做展平 ,變得更易閱讀.  
 
+#### 同時發出多個Promise , 最後回傳一個新的Promise(Fulfilled或Rejected) 
+- Promise.all( ) : 當全部為Fulfilled時 , 回傳一個Fulfilled的Promise , 但只要有Rejected , 則回傳一個Rejected的Promise.
+- Promise.race( ) : 只要有一個Promise改變狀態(Fulfilled/Rejected) , 就會馬上回傳一個Promise(Fulfilled/Rejected). 
 
 <br />
 
