@@ -1,5 +1,5 @@
 ### 介紹
-  這是一個學習 promise 時做的筆記 , promise資料夾下有兩個檔案 , 一個是介紹 promise 的md , 另一個是有七個練習範例的js檔案 , 可使用 [vscode](https://code.visualstudio.com/) 搭配 [Quokka.js](https://quokkajs.com/) 來練習.
+  這是一個學習 promise 時做的筆記 , promise 資料夾下有兩個檔案 , 一個是介紹 promise 的 md , 另一個是有七個練習範例的 js 檔案 , 可使用 [vscode](https://code.visualstudio.com/) 搭配 [Quokka.js](https://quokkajs.com/) 來練習.
 
 
 ### Installation
