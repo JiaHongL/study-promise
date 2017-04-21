@@ -31,7 +31,7 @@
 - onRejected( ) : 當狀態為Rejected時 , 執行函式內的程式碼 . 
 
 #### 一次發出多個Promise , 最後回傳一個新的Promise(Fulfilled或Rejected) 
-- Promise.all( ) : 當全部為Fulfilled時 , 回傳一個Fulfilled的Promise , 但只要有Rejected時 , 則回傳一個Rejected的Promise.
+- Promise.all( ) : 當全部為Fulfilled時 , 回傳一個Fulfilled的Promise , 但只要有Rejected , 則回傳一個Rejected的Promise.
 - Promise.race( ) : 只要有一個Promise改變狀態(Fulfilled/Rejected) , 就會馬上回傳一個Promise(Fulfilled/Rejected). 
 
 
