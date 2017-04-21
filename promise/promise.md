@@ -52,36 +52,59 @@
     }
 
 #### ii.Promise運作過程.
-
-    timeout(3000).then((v)=>{      //第1個promise       
-            成功時做...
-            return timeout(1000);  //傳一個Promse給下一個then
-        },(error)=>{         
-            失敗時做...             //如果有寫的話 , 會由這邊接收error , cath則不會接收到error.
-        }).then((v)=>{
-            成功時做...             //第2個Promise.then , 這邊沒寫onrejected() , 有錯誤的話 , 會由catch捕獲.
-        }).catch((error)=>{
-            失敗時做...             //接收鏈結上的錯誤.
-        })
-
+    const getData = ()=>{
+    
+        console.log('Start');
+        
+        timeout(3000).then((v)=>{      //第1個promise       
+                成功時做...
+                console.log('(1)');
+                return timeout(1000);  //傳一個Promse給下一個then
+            },(error)=>{         
+                失敗時做...             //如果有寫的話 , 會由這邊接收error , cath則不會接收到error.
+            }).then((v)=>{
+                成功時做...             //第2個Promise.then , 這邊沒寫onrejected() , 有錯誤的話 , 會由catch捕獲.
+                console.log('(2)');
+            }).catch((error)=>{
+                失敗時做...             //接收鏈結上的錯誤.
+            })
+            
+        console.log('End');
+        
+     }
+     
+     getData();  // 執行順序： Start => End => (1) => (2) 
+     
+     Ps: Promise 只是讓異步的任務依序執行 , 而其它同步的任務還是會先執行.
+   
 
 #### iii.使用ES7的 async / await , 讓 await 代替 then , 讓程式碼更加語意化.
 
     const getData = async()=>{    //定義時加上async , 說明是異步函式.
+    
+        console.log('Start');
+        
         try {
             await timeout(3000);    //加上await , 等待完成後才會做下一步 , 就像是同步.
+            console.log('(1)');
         } catch (error) {           //error handler, 改換用try/catch來捕捉.
             console.log(error);
         }
 
         try {
             await timeout(1000);
+            console.log('(2)');
         } catch (error) {
             console.log(error);
         }
+        
+        console.log('End');
+        
     }
-
-    getData();
+    
+    getData(); // 執行順序： Start => (1) => (2) => End
+    Ps: await 和 then 還是有差別的 , 使用await會等異步任務執行完後 , 再執行其它任務 , 全部的任務都變成像同步任務一樣.
+    
  > async / await 只是語法糖 , 也是基於Promise上運作.
 
 <br />
