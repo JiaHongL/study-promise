@@ -77,7 +77,6 @@
      
      Ps: Promise 只是讓異步任務依序執行 , 而其它同步任務還是會先執行.
    
-
 #### iii.使用ES7的 async / await , 讓 await 代替 then , 讓程式碼更加語意化.
 
     const getData = async()=>{    //定義時加上async , 說明是異步函式.
