@@ -2,7 +2,7 @@
 因為**Javascript**是**單線程** , 意味著執行任務時需要排隊 , 同一時間只能做一件事 , 
 而執行任務又分為**同步模式**和**異步模式**.
 
-> Javascript**單線程**運作的方式 , 是把**同步任務**放在**主執行緒**做排隊執行(阻塞) , 而**異步任務**則放在**任務列隊(task queue)**(非阻塞) , 當**異步任務**運行有結果後 , 再放回**主執行緒**上.  
+> Javascript**單線程**運作的方式 , 是把**同步任務**放在**主執行緒**做排隊執行(阻塞) , 而**異步任務**則放在**任務列隊(task queue)**(非阻塞) , 當**異步任務**運行有結果後 , 藉由**事件循環(Event Loop)**的機制 , 再放回**主執行緒**上.  
 
 <br />
 
@@ -111,6 +111,6 @@
 <br />
 
 ## 參考  
-  - [阮一峰 - Javascript異步編程的4種方法](http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html)  
+  - [阮一峰 - 什麼是 Event Loop？](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)  
   - [JavaScript Promise迷你书](http://liubin.org/promises-book/) 
   - [告別 JavaScript 的 Promise ! 迎接 Async/Await 的到來](https://jigsawye.com/2016/04/18/understanding-javascript-async-await/) 
