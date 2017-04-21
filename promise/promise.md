@@ -30,6 +30,10 @@
 - onFulfilled( ): 當狀態為Fulfilled時 , 執行函式內的程式碼 .    
 - onRejected( ) : 當狀態為Rejected時 , 執行函式內的程式碼 . 
 
+#### 一次發出多個Promise , 最後回傳一個新的Promise(Fulfilled或Rejected) 
+- Promise.all( ) : 當全部為Fulfilled時 , 回傳一個Fulfilled的Promise , 但只要有一個Rejected,則回傳一個Rejected的Promise.
+- Promise.race( ) : 只要有一個Promise改變狀態(Fulfilled或Rejected) , 就會馬上回傳一個Fulfilled或Rejected的Promise. 
+
 
 #### 這是 Typescript 對 Promise 的型別定義 , '?' 表示可有可無的意思. ( 有簡化過 , 留重要的部份 )
 
@@ -49,7 +53,7 @@
     let timeout = (s) => {
         return new Promise((resolve,reject) => {
             setTimeout(() => {
-                if (s == 10000) {
+                if (s == 2500) {
                     reject('error'); //失敗時
                 } else {
                     resolve(s); //成功時
@@ -84,7 +88,28 @@
      
      Ps: Promise 只是讓異步任務依序執行 , 而其它同步任務還是會先執行.
 
-#### iii.使用ES7的 async / await , 讓 await 代替 then , 讓程式碼更加語意化.
+#### iii. Promise.all 與 Promise.race 的區別
+    //兩者都是同時發出三個Promise , 然後timeout(2500)設定為失敗.
+    const main = () => {return Promise.all([timeout(2500), timeout(1000), timeout(3000)]);}
+    const main2 = () => {return Promise.race([timeout(2500), timeout(1000), timeout(3000)]);}
+
+    main().then((v) => {
+        console.log(v);
+    }).catch((error) => {
+        console.log(error);     //error 
+    });
+
+    main2().then((v) => {
+        console.log(v);         //1000
+    }).catch(function (error) {
+        console.log(error);
+    });
+
+    說明 : main()  => 因為其中一個失敗 , 所以就回傳一個狀態為Rejected的Promise.
+          main2() => timeout(1000)最快改變狀態(Pending->Fulfilled) , 所以就回傳一個Fulfilled的Promise.
+
+
+#### iv.使用ES7的 async / await , 讓 await 代替 then , 讓程式碼更加語意化.
 
     const getData = async()=>{    //定義時加上async , 說明是異步函式.
     

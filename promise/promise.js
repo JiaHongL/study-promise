@@ -212,7 +212,7 @@ const getData6 = () => {
 
 
 /* 
-    範例六：使用 ES7的async/await.
+    範例七：使用 ES7的async/await.
     說明：async/await並不是一種新的東西,也是基於promise運作的一種語法糖,可以用await來取代then,讓程式碼更語義化,
          另外error handler,是改換用try/catch來捕捉.
     流程：
@@ -255,3 +255,41 @@ const getData7 = async() => {
     }
 }
 // getData7().catch((error)=>{console.log(error);});
+
+
+/* 
+    範例八：Promise.all() vs Promise.race()
+    說明： 比較兩者的差別
+          Promise.all() : 需全部完成才會回一個狀態為Fulfilled的Promise , 只要一個失敗就傳一個狀態為Rejected的Promise.
+          Promise.race() : 只要陣列裡的其中一個Promise改變狀態(Fulfilled/Rejected) , 就回傳一個同樣狀態的Promise.
+    流程：
+ */
+
+let timeout4 = (s) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (s == 2500) {
+                reject('error ' + new Date());
+            } else {
+                resolve(s);
+            }
+        }, s);
+    });
+}
+
+const main = () => {return Promise.all([timeout4(2500), timeout4(1000), timeout4(3000)]);}
+
+const main2 = () => {return Promise.race([timeout4(2500), timeout4(1000), timeout4(3000)]);}
+
+
+main().then((v) => {
+    console.log(v);
+}).catch((error) => {
+    console.log(error); //error 
+});
+
+main2().then((v) => {
+    console.log(v); //1000
+}).catch(function (error) {
+    console.log(error);
+});
