@@ -108,8 +108,9 @@
         
     }
     
-    getData().catch((error)=>{console.log(error);});  // 執行順序： Start => (1) => (2) => End  
-    Ps: 如果沒寫 try/catch 的 await , 就會由這裡的catch()捕捉error handler.     
+    getData().catch((error)=>{console.log(error);});  //如果沒寫 try/catch 的 , 就會由這裡的catch()來捕捉error handler.
+                                                      // 執行順序： Start => (1) => (2) => End  
+      
     Ps: await 和 then 還是有差別的 , 使用 await 會等異步任務執行完後 , 再執行其它任務 , 讓全部的任務都變成像同步任務一樣.
     
  > async / await 只是語法糖 , 也是基於 Promise 上運作.
