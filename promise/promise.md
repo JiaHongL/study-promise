@@ -14,7 +14,7 @@
 ## 三、Promise Object
 我們有時會對異步事件做層層的嵌套 , 讓它變成像在執行同步事件 , 但就會造成程式不易閱讀 , 而為了解決層層嵌套的問題 , 所以就出現了Promise這個解決方案 .
 
-> ES6已經把Promise納入規範 , 並提供了 Promise Object 來解決異步的問題.
+> ES6已經把 Promise 納入規範 , 並提供了 Promise Object 來解決異步的問題.
 
 
 #### Promise 三種狀態  
@@ -110,8 +110,8 @@
     
     getData(); // 執行順序： Start => (1) => (2) => End
     
-    Ps: await 和 then 還是有差別的 , 使用await會等異步任務執行完後 , 再執行其它任務 , 讓全部的任務都變成像同步任務一樣.    
- > async / await 只是語法糖 , 也是基於Promise上運作.
+    Ps: await 和 then 還是有差別的 , 使用 await 會等異步任務執行完後 , 再執行其它任務 , 讓全部的任務都變成像同步任務一樣.    
+ > async / await 只是語法糖 , 也是基於 Promise 上運作.
 
 <br />
 
