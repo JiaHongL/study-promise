@@ -11,6 +11,7 @@
 
 > ES6已經把Promise納入規範 , 並提供了 Promise Object 來解決異步的問題.
 
+
 #### Promise 三種狀態  
 - Pending :  剛建立 , 正進行中 , 等待結果.   
 - Fulfilled : 已成功. 
@@ -23,6 +24,7 @@
 #### Promise 狀態改變後執行的函式
 - onFulfilled( ): 當狀態為Fulfilled時 , 執行函式內的程式碼 .    
 - onRejected( ) : 當狀態為Rejected時 , 執行函式內的程式碼 . 
+
 
 #### 這是 Typescript 對 Promise 的型別定義 , '?' 表示可有可無的意思. ( 有簡化過 , 留重要的部份 )
 
@@ -76,7 +78,7 @@
      getData();  // 執行順序： Start => End => (1) => (2)
      
      Ps: Promise 只是讓異步任務依序執行 , 而其它同步任務還是會先執行.
-   
+
 #### iii.使用ES7的 async / await , 讓 await 代替 then , 讓程式碼更加語意化.
 
     const getData = async()=>{    //定義時加上async , 說明是異步函式.
