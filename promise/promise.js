@@ -254,4 +254,4 @@ const getData7 = async() => {
         console.log(error);
     }
 }
-// getData7();
+// getData7()catch((error)=>{console.log(error);});
